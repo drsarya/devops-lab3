@@ -7,8 +7,8 @@ terraform {
   required_version = ">= 0.13"
 
   backend "s3" {
-    endpoint   = "storage.yandexcloud.net"
-    region     = "ru-central1"
+    endpoint                    = "storage.yandexcloud.net"
+    region                      = "ru-central1"
     skip_region_validation      = true
     skip_credentials_validation = true
   }
@@ -42,7 +42,7 @@ resource "yandex_compute_instance" "vm-1" {
   }
 
   metadata = {
-    ssh-keys = "ubuntu:${file("C:/Users/tashu/.ssh/id_ed25519.pub")}"
+    ssh-keys = "ubuntu:${file(var.ssh_key_path)}"
   }
 }
 

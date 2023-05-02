@@ -27,3 +27,8 @@ variable "v4_cidr_blocks" {
 variable "disk_1_size" {
   type = number
 }
+
+variable "ssh_key_path" {
+  type = string
+}
+ 
